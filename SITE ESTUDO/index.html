@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>site do pyter</title>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body {
+            background: black;
+            color: white;
+            font-family: Arial;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* CONTAINER (BORDA EM VOLTA DE TUDO) */
+        .container {
+            border: 1px solid #222;
+            border-radius: 15px;
+            padding: 25px;
+            width: 400px;
+            background: #0d0d0d;
+        }
+
+        /* FOTO */
+        .perfil {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        /* NOME */
+        .nome {
+            font-size: 32px;
+            text-shadow: 0 0 10px white;
+            margin: 5px 0;
+        }
+
+        /* BIO */
+        .bio {
+            color: #aaa;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .desc {
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        /* BOTÃO */
+        .botoes span {
+            border: 1px solid #444;
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 12px;
+        }
+
+        /* CARDS */
+        .card {
+            display: flex;
+            align-items: center;
+            background: #111;
+            padding: 20px;
+            margin-top: 10px;
+            border-radius: 10px;
+            border: 1px solid #222;
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+            border-color: #ff0000;
+        }
+
+        /* ÍCONES */
+        .card i {
+            font-size: 24px;
+            margin-right: 15px;
+        }
+
+        .fa-youtube { color: red; }
+        .fa-discord { color: #5865F2; }
+        .fa-tiktok { color: white; }
+
+        .card:hover i {
+            transform: scale(1.2);
+        }
+        #particles-js {
+     position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* fica atrás de tudo */
+    top: 0;
+    left: 0;
+    }   
+    .player {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background: #0d0d0d;
+  border: 1px solid #ff0000;
+  border-radius: 12px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+}
+
+.player button {
+  background: black;
+  color: red;
+  border: 1px solid red;
+  border-radius: 8px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.player button:hover {
+  background: red;
+  color: black;
+}
+
+.player input {
+  accent-color: red;
+}
+.spotify-player {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  width: 200px;
+  background: #0d0d0d;
+  border: 1px solid #ff0000;
+  border-radius: 15px;
+  padding: 8px;
+  box-shadow: 0 0 15px rgba(255,0,0,0.4);
+  font-size: 12px;
+}
+
+.spotify-player .top {
+  margin-bottom: 10px;
+  color: white;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.controls button {
+  background: black;
+  border: 1px solid red;
+  color: red;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+
+.controls button:hover {
+  background: red;
+  color: black;
+}
+
+.controls input {
+  flex: 1;
+  accent-color: red;
+}
+
+.volume {
+  margin-top: 10px;
+}
+
+.volume input {
+  width: 100%;
+  accent-color: red;
+}
+.spotify-player {
+  transform: scale(0.9);
+}
+    /* RESPONSIVO PRA CELULAR */
+    @media (max-width: 600px) {
+
+  .container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .perfil {
+    width: 90px;
+        height: 90px;
+     }
+
+    .nome {
+    font-size: 22px;
+     }
+
+     .bio {
+    font-size: 13px;
+     }
+
+     .card {
+    padding: 15px;
+    font-size: 14px;
+     }
+
+     .card i {
+       font-size: 18px;
+    }
+
+     body {
+    padding: 10px;
+    }
+
+    }
+    </style>
+</head>
+
+<body>
+<div id="particles-js"></div>
+<div class="container">
+
+    <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/117a369e-11ce-45be-aa86-6dbee09c98f5-profile_image-300x300.png" class="perfil">
+
+    <h1 class="nome">𝓟𝓨𝓣𝓔𝓡</h1>
+
+    <p class="bio">❝studying the code of the world🌍💻❞</p>
+
+    <p class="desc">𝑀𝐸𝐿𝐻𝒪𝑅 𝒜𝒟𝑀 𝒟𝒜 𝒱𝒜𝒩𝐼𝒯𝒴</p>
+
+    <a href="https://www.youtube.com/@xitada77" target="_blank" class="card">
+        <i class="fa-brands fa-youtube"></i>
+        YouTube - vanity yt
+    </a>
+
+    <a href="https://discord.gg/QGDrAX6tv7" target="_blank" class="card">
+        <i class="fa-brands fa-discord"></i>
+        Discord - vanity store
+    </a>
+
+    <a href="https://www.tiktok.com/@vanitystore0" target="_blank" class="card">
+        <i class="fa-brands fa-tiktok"></i>
+        TikTok - vanity tkk
+    </a>
+
+</div>
+<script>
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 80 },
+    size: { value: 3 },
+    move: { speed: 2 },
+    line_linked: {
+      enable: true,
+      color: "#ff0000" /* vermelho */
+    },
+    color: { value: "#ff0000" } /* partículas vermelhas */
+  }
+});
+</script>
+</div>
+</body>
+</html>
